@@ -18,10 +18,10 @@
 /* Description: Task executes once to initialize all the Modules */
 void Init_Task(void)
 {
-    /* Initialize Dio Driver */
-    Dio_Init(&Dio_Configuration);
+    /* Initialize Port Driver */  
     Port_Init(&Port_Configuration);
-  
+    /* Initialize Dio Driver */
+    Dio_Init(&Dio_Configuration); 
 }
 
 /* Description: Task executes every 20 Mili-seconds to check the button state */
