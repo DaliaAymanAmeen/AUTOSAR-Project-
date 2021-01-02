@@ -535,12 +535,14 @@ void Port_Init(const Port_ConfigType* ConfigPtr)
 #if (PORT_SET_PIN_DIRECTION_API == STD_ON)
 void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction) 
 {
+      boolean error = FALSE;
 #if (PORT_DEV_ERROR_DETECT == STD_ON)
         /* check if PORT Driver is Initialized */
         if (PORT_NOT_INITIALIZED == Port_Status)
 	{
                 Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinDirection_SID,
 		  PORT_E_UNINIT);
+                error = TRUE;
 	}
         else
         {
@@ -552,6 +554,7 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
         {
               Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinDirection_SID,
 		 PORT_E_PARAM_PIN);
+              error = TRUE;
         }
         
         else
@@ -564,6 +567,7 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
         {
               Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinDirection_SID,
 		 PORT_E_DIRECTION_UNCHANGEABLE);
+              error = TRUE;
         }
         
         else
@@ -572,7 +576,8 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
         }
       
 #endif
-
+    if(FALSE == error)
+    {
         if (Pin >=0 && Pin <=7) // Port A
         {     
               switch(Direction)
@@ -654,7 +659,11 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
                     break;
               }
         }      
-        
+    }
+    else
+    {
+      /* No Action Required */
+    }
 }
 #endif
 
@@ -671,12 +680,14 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
 ************************************************************************************/
 void Port_RefreshPortDirection(void)
 {
+     boolean error = FALSE;
 #if (PORT_DEV_ERROR_DETECT == STD_ON)
         /* check if PORT Driver is Initialized */
         if (PORT_NOT_INITIALIZED == Port_Status)
 	{
                 Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_RefreshPortDirection_SID,
 		  PORT_E_UNINIT);
+                error = TRUE;
 	}
         else
         {
@@ -685,6 +696,8 @@ void Port_RefreshPortDirection(void)
   
 
 #endif
+      if(FALSE == error)
+      {
          Port_PinType current_pin;
          for (uint8 i = 0; i < PORT_CONFIGURED_PINS ; i++)
          {
@@ -815,9 +828,12 @@ void Port_RefreshPortDirection(void)
             } 
             
            }
+      }
+      else
+      {
+          /* No Action Required */
+      }
 }
-
-
 /************************************************************************************
 * Service Name: Port_GetVersionInfo
 * Service ID[hex]: 0x03
@@ -832,12 +848,14 @@ void Port_RefreshPortDirection(void)
 #if (PORT_VERSION_INFO_API == STD_ON)
 void Port_GetVersionInfo(Std_VersionInfoType* versioninfo)
 {
+    boolean error = FALSE;
 #if (PORT_DEV_ERROR_DETECT == STD_ON)
         /* check if PORT Driver is Iitialized */
         if (PORT_NOT_INITIALIZED == Port_Status)
 	{
                 Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_GetVersionInfo_SID,
 		  PORT_E_UNINIT);
+                error = TRUE;
 	}
         else
         {
@@ -849,13 +867,15 @@ void Port_GetVersionInfo(Std_VersionInfoType* versioninfo)
 	{
                 Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_GetVersionInfo_SID,
 		  PORT_E_PARAM_POINTER);
+                error = TRUE;
 	}
         else
         {
             /* No Action Required */
         }
 #endif
-        
+      if(FALSE == error)
+      {
         /* Copy the vendor Id */
         versioninfo->vendorID = (uint16)PORT_VENDOR_ID;
         /* Copy the module Id */
@@ -866,6 +886,11 @@ void Port_GetVersionInfo(Std_VersionInfoType* versioninfo)
         versioninfo->sw_minor_version = (uint8)PORT_SW_MINOR_VERSION;
         /* Copy Software Patch Version */
         versioninfo->sw_patch_version = (uint8)PORT_SW_PATCH_VERSION;
+      }
+      else
+      {
+        /* No Action Required */
+      }
 }
 #endif
 
@@ -884,12 +909,14 @@ void Port_GetVersionInfo(Std_VersionInfoType* versioninfo)
 #if (PORT_SET_PIN_MODE_API == STD_ON)
 void Port_SetPinMode(Port_PinType Pin,Port_PinModeType Mode)
 {
+     boolean error = FALSE;
 #if (PORT_DEV_ERROR_DETECT == STD_ON)
         /* check if PORT Driver is initialized */
         if (PORT_NOT_INITIALIZED == Port_Status)
 	{
                 Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinMode_SID,
 		  PORT_E_UNINIT);
+                error = TRUE;
 	}
         else
         {
@@ -901,6 +928,7 @@ void Port_SetPinMode(Port_PinType Pin,Port_PinModeType Mode)
         {
               Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinMode_SID,
 		 PORT_E_PARAM_PIN);
+              error = TRUE;
         }
         
         else
@@ -913,28 +941,30 @@ void Port_SetPinMode(Port_PinType Pin,Port_PinModeType Mode)
         {
               Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinMode_SID,
 		 PORT_E_DIRECTION_UNCHANGEABLE);
+              error = TRUE;
         }
         
         else
         {
             /* No Action Required */
         }
-                
+                    
          /* check if Pin Mode Type ID is Valid */
         if (Mode > 9 && Mode != 14)  
         {
               Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, Port_SetPinMode_SID,
 		 PORT_E_PARAM_INVALID_MODE);
+              error = TRUE;
         }
         
         else
         {
             /* No Action Required */
-        }
-        
+        }  
 
 #endif
-        
+    if(FALSE == error)
+    {        
         if (Pin >=0 && Pin <=7) // Port A
         {     
               switch(Mode)
@@ -1029,7 +1059,11 @@ void Port_SetPinMode(Port_PinType Pin,Port_PinModeType Mode)
                   GPIO_PORTF_PCTL_REG |= ((0x00000000) +(Mode) << (Pin * 4));
                   break;    
               }
-        }
-
+        }   
+    }
+    else
+    {
+      /* No Action Required */
+    }
 }
 #endif
