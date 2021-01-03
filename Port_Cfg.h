@@ -86,54 +86,54 @@
  *                          Define the 43 pins                                 *
  *******************************************************************************/
 
-#define PORT_PIN_17                     (0U)                    //A0
-#define PORT_PIN_18                     (1U)                    //A1
-#define PORT_PIN_19                     (2U)                    //A2
-#define PORT_PIN_20                     (3U)                    //A3
-#define PORT_PIN_21                     (4U)                    //A4
-#define PORT_PIN_22                     (5U)                    //A5
-#define PORT_PIN_23                     (6U)                    //A6
-#define PORT_PIN_24                     (7U)                    //A7
+#define PORT_PIN_00                     (0U)                    //A0
+#define PORT_PIN_01                     (1U)                    //A1
+#define PORT_PIN_02                     (2U)                    //A2
+#define PORT_PIN_03                     (3U)                    //A3
+#define PORT_PIN_04                     (4U)                    //A4
+#define PORT_PIN_05                     (5U)                    //A5
+#define PORT_PIN_06                     (6U)                    //A6
+#define PORT_PIN_07                     (7U)                    //A7
    
-#define PORT_PIN_45                     (8U)                    //B1
-#define PORT_PIN_46                     (9U)                    //B2
-#define PORT_PIN_47                     (10U)                   //B3
-#define PORT_PIN_48                     (11U)                   //B4
-#define PORT_PIN_58                     (12U)                   //B5
-#define PORT_PIN_57                     (13U)                   //B6
-#define PORT_PIN_01                     (14U)                   //B7
-#define PORT_PIN_04                     (15U)                   //B7
+#define PORT_PIN_08                     (8U)                    //B1
+#define PORT_PIN_09                     (9U)                    //B2
+#define PORT_PIN_10                     (10U)                   //B3
+#define PORT_PIN_11                     (11U)                   //B4
+#define PORT_PIN_12                     (12U)                   //B5
+#define PORT_PIN_13                     (13U)                   //B6
+#define PORT_PIN_14                     (14U)                   //B7
+#define PORT_PIN_15                     (15U)                   //B7
    
-#define PORT_PIN_52                     (16U)                   //C0
-#define PORT_PIN_51                     (17U)                   //C1
-#define PORT_PIN_50                     (18U)                   //C2
-#define PORT_PIN_49                     (19U)                   //C3
-#define PORT_PIN_16                     (20U)                   //C4
-#define PORT_PIN_15                     (21U)                   //C5
-#define PORT_PIN_14                     (22U)                   //C6
-#define PORT_PIN_13                     (23U)                   //C7        
+#define PORT_PIN_16                     (16U)                   //C0
+#define PORT_PIN_17                     (17U)                   //C1
+#define PORT_PIN_18                     (18U)                   //C2
+#define PORT_PIN_19                     (19U)                   //C3
+#define PORT_PIN_20                     (20U)                   //C4
+#define PORT_PIN_21                     (21U)                   //C5
+#define PORT_PIN_22                     (22U)                   //C6
+#define PORT_PIN_23                     (23U)                   //C7        
    
-#define PORT_PIN_61                     (24U)                   //D0
-#define PORT_PIN_62                     (25U)                   //D1
-#define PORT_PIN_63                     (26U)                   //D2  
-#define PORT_PIN_64                     (27U)                   //D3
-#define PORT_PIN_43                     (28U)                   //D4
-#define PORT_PIN_44                     (29U)                   //D5
-#define PORT_PIN_53                     (30U)                   //D6
-#define PORT_PIN_10                     (31U)                   //D7
+#define PORT_PIN_24                     (24U)                   //D0
+#define PORT_PIN_25                     (25U)                   //D1
+#define PORT_PIN_26                     (26U)                   //D2  
+#define PORT_PIN_27                     (27U)                   //D3
+#define PORT_PIN_28                     (28U)                   //D4
+#define PORT_PIN_29                     (29U)                   //D5
+#define PORT_PIN_30                     (30U)                   //D6
+#define PORT_PIN_31                     (31U)                   //D7
    
-#define PORT_PIN_09                     (32U)                   //E0
-#define PORT_PIN_08                     (33U)                   //E1
-#define PORT_PIN_07                     (34U)                   //E2
-#define PORT_PIN_06                     (35U)                   //E3
-#define PORT_PIN_59                     (36U)                   //E4
-#define PORT_PIN_60                     (37U)                   //E5
+#define PORT_PIN_32                     (32U)                   //E0
+#define PORT_PIN_33                     (33U)                   //E1
+#define PORT_PIN_34                     (34U)                   //E2
+#define PORT_PIN_35                     (35U)                   //E3
+#define PORT_PIN_36                     (36U)                   //E4
+#define PORT_PIN_37                     (37U)                   //E5
    
-#define PORT_PIN_28                     (38U)                   //F0
-#define PORT_PIN_29                     (39U)                   //F1
-#define PORT_PIN_30                     (40U)                   //F2
-#define PORT_PIN_31                     (41U)                   //F3
-#define PORT_PIN_05                     (42U)                   //F4
+#define PORT_PIN_38                     (38U)                   //F0
+#define PORT_PIN_39                     (39U)                   //F1
+#define PORT_PIN_40                     (40U)                   //F2
+#define PORT_PIN_41                     (41U)                   //F3
+#define PORT_PIN_42                     (42U)                   //F4
 
 
 #endif /* PORT_CFG_H */
