@@ -10,5 +10,6 @@ This is the final project after finishing Embeddd Automotive AUTOSAR Device Driv
 
 **Attachments with the project:**
 1. Used documintations 
-2. Video
-[![It's workig!]()]
+2. Video 
+
+![It's working](/attachments/video.gif)
